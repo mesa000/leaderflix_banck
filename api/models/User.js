@@ -23,13 +23,7 @@ const UserSchema = new mongoose.Schema(
          */
         password: { type: String, required: true },
 
-        lastname: { type: String, required: true },
-
-        birthdate: { type: Date, required: true },
-
         email: { type: String, required: true },
-
-        bio: { type: String },
 
         resetPasswordToken: String,
         resetPasswordExpires: Date,
@@ -47,4 +41,4 @@ const UserSchema = new mongoose.Schema(
  * Mongoose model for the User collection.
  * Provides an interface to interact with User documents in MongoDB.
  */
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User_movie", UserSchema);
