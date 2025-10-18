@@ -35,10 +35,8 @@ console.log("Password recibido:", req.body.password);
         user: {
           id: user._id,
           username: user.username,
-          lastname: user.lastname,
           email: user.email,
           birthdate: user.birthdate,
-          bio: user.bio
         }
       });
 
@@ -64,11 +62,9 @@ async register(req, res) {
       //Create the new user
       const newUser = await UserDAO.create({
         username,
-        lastname,
         email,
         password: hashedPassword, // Store hashed password
         birthdate,
-        bio
       });
 
       res.status(201).json({
@@ -76,10 +72,8 @@ async register(req, res) {
         user: {
           id: newUser._id,
           username: newUser.username,
-          lastname: newUser.lastname,
           email: newUser.email,
           birthdate: newUser.birthdate,
-          bio: newUser.bio
         }
       });
 

@@ -16,13 +16,13 @@ exports.forgotPassword = async (req, res) => {
     user.resetPasswordToken = resetToken;
     user.resetPasswordExpires = Date.now() + 3600000;
     await user.save();
-
-    const resetURL = `https://to-do-list-client-nextstep.vercel.app/#/reset-password?token=${resetToken}`;
-    //const resetURL = `http://localhost:5173/#/reset-password?token=${resetToken}`;
+    
+    //const resetURL = `https://to-do-list-client-nextstep.vercel.app/#/reset-password?token=${resetToken}`;
+    const resetURL = `http://localhost:5173/home?token=${resetToken}`;
     
     const msg = {
       to: user.email,
-      from: "nextstepoficioal@gmail.com", // debe estar verificado en SendGrid
+      from: "nextstepoficioal@gmail.com", 
       subject: "Recuperación de contraseña",
       html: `
         <p>Has solicitado recuperar tu contraseña</p>
