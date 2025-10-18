@@ -18,7 +18,7 @@ exports.forgotPassword = async (req, res) => {
     await user.save();
     
     //const resetURL = `https://to-do-list-client-nextstep.vercel.app/#/reset-password?token=${resetToken}`;
-    const resetURL = `http://localhost:5173/home?token=${resetToken}`;
+    const resetURL = `http://localhost:5173/reset_password?token=${resetToken}`;
     
     const msg = {
       to: user.email,
