@@ -46,7 +46,7 @@ console.log("Password recibido:", req.body.password);
   }
 
 async register(req, res) {
-    const { username, lastname, email, password, birthdate, bio } = req.body;
+    const { username, email, password, birthdate} = req.body;
 
     try {
       //Check if the email is already registered
