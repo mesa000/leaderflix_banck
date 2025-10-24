@@ -93,8 +93,6 @@ async register(req, res) {
       updateData.password = await bcrypt.hash(password, salt);
     }
 
-    console.log("🟢 Actualizando usuario:", id, updateData);
-
     const updatedUser = await UserDAO.update(id, updateData);
 
     if (!updatedUser) {
